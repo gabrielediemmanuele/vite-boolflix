@@ -17,7 +17,6 @@ export default {
 </script>
 
 <template>
-  <h1>{{ title }}</h1>
   <AppHeader></AppHeader>
 </template>
 
