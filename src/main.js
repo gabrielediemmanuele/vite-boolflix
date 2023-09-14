@@ -2,8 +2,8 @@ import { createApp } from "vue";
 import App from "./App.vue";
 
 /* Bootstrap */
-/* import "bootstrap/scss/bootstrap"; */
-import * as bootstrap from "bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap";
 
 /* font awesome */
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
