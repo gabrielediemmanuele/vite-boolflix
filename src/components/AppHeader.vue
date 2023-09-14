@@ -25,7 +25,8 @@ export default {
     getMovie() {
       let movieUrl = `${this.movieApi}${this.query}${this.api_key}`;
       axios.get(movieUrl).then((response) => {
-        console.log(response);
+        this.filteredMovies = response.data.results;
+        console.log(response.data.results);
       });
     },
   },
@@ -68,10 +69,10 @@ export default {
   <div class="risultato">
     <ul>
       <li v-for="movies in filteredMovies" :key="id">
-        <span>TITOLO {{}}</span>
-        <span>TITOLO ORIGINALE {{}}</span>
-        <span>LINGUA {{}}</span>
-        <span>VOTO {{}}</span>
+        <div>Titolo: {{ movies.title }}</div>
+        <div>Titolo Originale: {{ movies.original_title }}</div>
+        <div>Lingua: {{ movies.original_language }}</div>
+        <div>Voto: {{ movies.vote_count }}</div>
       </li>
     </ul>
   </div>
