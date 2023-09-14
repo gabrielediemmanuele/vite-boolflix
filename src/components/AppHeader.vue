@@ -72,7 +72,7 @@ export default {
         <div>Titolo: {{ movies.title }}</div>
         <div>Titolo Originale: {{ movies.original_title }}</div>
         <div>Lingua: {{ movies.original_language }}</div>
-        <div>Voto: {{ movies.vote_count }}</div>
+        <div>Voto: {{ movies.vote_average }}</div>
       </li>
     </ul>
   </div>
