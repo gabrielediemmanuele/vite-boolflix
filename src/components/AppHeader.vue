@@ -1,16 +1,38 @@
 <script>
-// import MyComponent from "./components/MyComponent.vue";
+//axios
+import axios from "axios";
 
 export default {
   data() {
     return {
-      title: "Hello world",
+      //url fragments
+      movieApi: "https://api.themoviedb.org/3/search/movie?query=",
+      tvSeriesApi: "https://api.themoviedb.org/3/search/tv?query=",
+      api_key: "&api_key=1d1fd003d3798bdc399e491c87adb22f",
+      query: "anelli",
+      //filtereds
+      filteredMovies: {},
+      filteredTvSeries: {},
     };
   },
 
   // components: {
   //   MyComponent,
   // },
+
+  //Methods
+  methods: {
+    getMovie() {
+      let intireUrl = `https://api.themoviedb.org/3/search/movie?query=${query}&api_key=1d1fd003d3798bdc399e491c87adb22f`;
+      axios.get(intireUrl).then((results) => {
+        this.filteredMovies = results;
+        console.log(results);
+      });
+    },
+  },
+  created() {
+    this.getMovie("");
+  },
 };
 </script>
 
@@ -31,17 +53,29 @@ export default {
           placeholder="Cerca film o serie tv.."
           aria-label="Recipient's username"
           aria-describedby="button-addon2"
+          v-model="query"
         />
         <button
           class="btn btn-outline-secondary bg-danger text-light"
           type="button"
           id="button-addon2"
+          @click="getMovie()"
         >
           Button
         </button>
       </div>
     </div>
   </header>
+  <div class="risultato">
+    <ul>
+      <li v-for="movies in filteredMovies" :key="id">
+        <span>TITOLO {{}}</span>
+        <span>TITOLO ORIGINALE {{}}</span>
+        <span>LINGUA {{}}</span>
+        <span>VOTO {{}}</span>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <style lang="scss" scoped>
