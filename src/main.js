@@ -2,7 +2,7 @@ import { createApp } from "vue";
 import App from "./App.vue";
 
 /* Bootstrap */
-import "bootstrap/scss/bootstrap";
+/* import "bootstrap/scss/bootstrap"; */
 import * as bootstrap from "bootstrap";
 
 /* font awesome */
