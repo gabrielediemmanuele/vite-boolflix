@@ -9,7 +9,7 @@ export default {
       movieApi: "https://api.themoviedb.org/3/search/movie?query=",
       tvSeriesApi: "https://api.themoviedb.org/3/search/tv?query=",
       api_key: "&api_key=1d1fd003d3798bdc399e491c87adb22f",
-      query: "anelli",
+      query: "",
       //filtereds
       filteredMovies: {},
       filteredTvSeries: {},
@@ -23,15 +23,14 @@ export default {
   //Methods
   methods: {
     getMovie() {
-      let intireUrl = `https://api.themoviedb.org/3/search/movie?query=${query}&api_key=1d1fd003d3798bdc399e491c87adb22f`;
-      axios.get(intireUrl).then((results) => {
-        this.filteredMovies = results;
-        console.log(results);
+      let movieUrl = `${this.movieApi}${this.query}${this.api_key}`;
+      axios.get(movieUrl).then((response) => {
+        console.log(response);
       });
     },
   },
   created() {
-    this.getMovie("");
+    this.getMovie();
   },
 };
 </script>
