@@ -15,11 +15,15 @@ export default {
 </script>
 
 <template>
+  <!--  header  -->
   <header>
+    <!-- bootstrap container  -->
     <div
       class="container d-flex justify-content-between align-items-center p-2"
     >
+      <!-- APP TITLE  -->
       <div class="text-danger h2">BOOLFLIX</div>
+      <!--    INPUT CONTAINER TEXT AND BUTTON  -->
       <div class="input-group d-flex">
         <input
           type="text"
@@ -29,7 +33,7 @@ export default {
           aria-describedby="button-addon2"
         />
         <button
-          class="btn btn-outline-secondary"
+          class="btn btn-outline-secondary bg-danger text-light"
           type="button"
           id="button-addon2"
         >
@@ -46,7 +50,7 @@ header {
 }
 .container {
   .input-group {
-    width: 250px;
+    width: 280px;
   }
 }
 </style>
