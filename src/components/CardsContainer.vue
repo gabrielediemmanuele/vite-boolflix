@@ -20,19 +20,11 @@ export default {
 </script>
 
 <template>
-  <!--* Col ciclo v-for generiamo tutti i 
-    film presenti dentro l'array generato -->
-  <div class="risultato">
-    <ul>
-      <li v-for="movies in store.filteredMovies" :key="id">
-        <div>Titolo: {{ movies.title }}</div>
-        <div>Titolo Originale: {{ movies.original_title }}</div>
-        <div>Lingua: {{ movies.language }}</div>
-        <div>Voto: {{ movies.vote }}</div>
-      </li>
-    </ul>
-  </div>
-  <!-- <Card></Card> -->
+  <Card
+    v-for="movies in store.filteredMovies"
+    :key="id"
+    :movieCard="movies"
+  ></Card>
 </template>
 
 <style lang="scss" scoped></style>
