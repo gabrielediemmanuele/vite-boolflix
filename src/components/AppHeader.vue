@@ -1,15 +1,9 @@
 <script>
-//axios
-/* import axios from "axios"; */
-
-//Import dello store che contiene i due container (vedi store.js)
-import { store } from "../data/store";
 export default {
   data() {
     return {
       //il query, rappresenta la parola filtrata nell'input.
       query: "",
-      store,
     };
   },
   //REGISTRARE L'EMIT: RIGA 37 E RIGA 46
@@ -56,18 +50,6 @@ export default {
       </div>
     </div>
   </header>
-  <!--* Col ciclo v-for generiamo tutti i 
-    film presenti dentro l'array generato -->
-  <div class="risultato">
-    <ul>
-      <li v-for="movies in store.filteredMovies" :key="id">
-        <div>Titolo: {{ movies.title }}</div>
-        <div>Titolo Originale: {{ movies.original_title }}</div>
-        <div>Lingua: {{ movies.language }}</div>
-        <div>Voto: {{ movies.vote }}</div>
-      </li>
-    </ul>
-  </div>
 </template>
 
 <style lang="scss" scoped>

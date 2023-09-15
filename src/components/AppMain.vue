@@ -3,9 +3,7 @@ import CardsContainer from "./CardsContainer.vue";
 
 export default {
   data() {
-    return {
-      title: "Hello world",
-    };
+    return {};
   },
 
   components: {
