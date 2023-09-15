@@ -24,9 +24,16 @@ export default {
 <template>
   <!--todo  ciclo v-for per generare le card tramite la prop :movieCard -->
   <Card
-    v-for="movies in store.filteredMovies"
-    :key="id"
+    v-for="(movies, index) in store.filteredMovies"
+    :key="index"
     :movieCard="movies"
+  ></Card>
+  <hr />
+  <div>TV SERIES</div>
+  <Card
+    v-for="(tvSeries, index) in store.filteredTvSeries"
+    :key="index"
+    :tvSeriesCard="tvSeries"
   ></Card>
 </template>
 

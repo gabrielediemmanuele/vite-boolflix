@@ -29,13 +29,13 @@ export default {
   //Methods
   methods: {
     //NOTA - query viene tramandato tramite emit da AppHeader.
-    //nome del metodo
+    //nome del metodo (per i film)
     getMovie(query) {
       //creo una variabile che racchiuda l'url dei film
       let movieUrl = `${this.movieApi}${query}${this.api_key}`;
       //con axios col get prendo la variabile e col response la risposta dell'url
       axios.get(movieUrl).then((response) => {
-        //asseggno all'array filteredMovies dichiarato in data, il risultato
+        //asseggno all'array filteredTvSeries dichiarato in data, il risultato
         // mi avvalgo di usare .map per creare un nuovo "array" cono solo i contenuti che mi
         //servono e posso anche aggiungerene, in caso di bisogno.
         this.store.filteredMovies = response.data.results.map((movie) => {
@@ -50,16 +50,40 @@ export default {
             //vote: Math.ceil(vote_average / 2),
           };
         });
-        console.log(response.data.results);
+        console.log(this.store.filteredMovies);
       });
+    },
+    //per le serie tv
+    getTvSeries(query) {
+      //variabile serie tv
+      let tvSeries = `${this.tvSeriesApi}${query}${this.api_key}`;
+      console.log(tvSeries);
+      //con axios col get prendo la variabile e col response la risposta dell'url
+      axios.get(tvSeries).then((response) => {
+        this.store.filteredTvSeries = response.data.results.map((tvSerie) => {
+          const { id, name, original_name, original_language, vote_average } =
+            tvSerie;
+          return {
+            id,
+            name: name,
+            original_name,
+            language: original_language,
+            vote: vote_average,
+            //vote: Math.ceil(vote_average / 2),
+          };
+        });
+        console.log(this.store.filteredTvSeries);
+      });
+    },
+    getLists(query) {
+      this.getMovie(query);
+      this.getTvSeries(query);
     },
   },
   // in realtà, la chiamata axios va _creata_
   //ma invece  creiamo un metodo versatile e su created richiamiamo
   //il nome del metodo cosi che venga "creato".
-  created() {
-    this.getMovie();
-  },
+  created() {},
 };
 </script>
 
@@ -67,7 +91,7 @@ export default {
   <!--* AppHeader si collega al suo Emit per dire nei methods a 
   getMovie di ricevere sia l'evento di ricerca
   che il contenuto "query"  -->
-  <AppHeader @re-search="getMovie"></AppHeader>
+  <AppHeader @re-search="getLists"></AppHeader>
   <AppMain> </AppMain>
 </template>
 
