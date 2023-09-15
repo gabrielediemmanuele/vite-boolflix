@@ -39,9 +39,10 @@ export default {
         // mi avvalgo di usare .map per creare un nuovo "array" cono solo i contenuti che mi
         //servono e posso anche aggiungerene, in caso di bisogno.
         this.store.filteredMovies = response.data.results.map((movie) => {
-          const { title, original_title, original_language, vote_average } =
+          const { id, title, original_title, original_language, vote_average } =
             movie;
           return {
+            id,
             title: title,
             original_title,
             language: original_language,
