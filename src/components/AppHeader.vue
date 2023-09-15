@@ -18,12 +18,12 @@ export default {
     <div
       class="container d-flex justify-content-between align-items-center p-2"
     >
-      <!-- APP TITLE  -->
+      <!-- APP TITLE -->
       <div class="text-danger h2">BOOLFLIX</div>
-      <!--    INPUT CONTAINER TEXT AND BUTTON  -->
+      <!-- INPUT CONTAINER TEXT AND BUTTON  -->
       <div class="input-group d-flex">
-        <!-- qui richiamiamo con v-model ciò che verrà scritto.  -->
-        <!-- il keyup invece serve per ottenere il risultato anche premendo "enter" -->
+        <!--* qui richiamiamo con v-model ciò che verrà scritto.  -->
+        <!--* il keyup invece serve per ottenere il risultato anche premendo "enter" -->
         <input
           type="text"
           class="form-control"

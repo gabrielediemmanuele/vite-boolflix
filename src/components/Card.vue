@@ -1,25 +1,20 @@
 <script>
-// import MyComponent from "./components/MyComponent.vue";
-
 export default {
   data() {
     return {
-      title: "Hello world",
+      //return
     };
   },
-
+  //props che riceve dal genitore (CardsContainer), le info dallo store
   props: {
     movieCard: Object,
   },
-  // components: {
-  //   MyComponent,
-  // },
 };
 </script>
 
 <template>
-  <!--* Col ciclo v-for generiamo tutti i 
-    film presenti dentro l'array generato -->
+  <!--* la lista riceve info dal genitore tramite la prop quindi -->
+  <!--* si cambia la key col nome della prop -->
   <div class="risultato">
     <ul>
       <li>

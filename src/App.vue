@@ -28,8 +28,8 @@ export default {
   },
   //Methods
   methods: {
-    //nome del metodo
     //NOTA - query viene tramandato tramite emit da AppHeader.
+    //nome del metodo
     getMovie(query) {
       //creo una variabile che racchiuda l'url dei film
       let movieUrl = `${this.movieApi}${query}${this.api_key}`;

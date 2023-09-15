@@ -13,6 +13,7 @@ export default {
 </script>
 
 <template>
+  <!--todo semplice collegamento con cards container  -->
   <CardsContainer></CardsContainer>
 </template>
 

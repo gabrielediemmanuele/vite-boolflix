@@ -9,6 +9,8 @@ import { store } from "../data/store";
 export default {
   data() {
     return {
+      //collegamento allo store necessario
+      //per inviare info alla props
       store,
     };
   },
@@ -20,6 +22,7 @@ export default {
 </script>
 
 <template>
+  <!--todo  ciclo v-for per generare le card tramite la prop :movieCard -->
   <Card
     v-for="movies in store.filteredMovies"
     :key="id"
