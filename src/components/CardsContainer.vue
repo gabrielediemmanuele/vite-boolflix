@@ -1,5 +1,5 @@
 <script>
-// import MyComponent from "./components/MyComponent.vue";
+import Card from "./Card.vue";
 
 export default {
   data() {
@@ -8,12 +8,14 @@ export default {
     };
   },
 
-  // components: {
-  //   MyComponent,
-  // },
+  components: {
+    Card,
+  },
 };
 </script>
 
-<template></template>
+<template>
+  <Card></Card>
+</template>
 
 <style lang="scss" scoped></style>
