@@ -17,7 +17,7 @@ export default {
       movieApi: "https://api.themoviedb.org/3/search/movie?query=",
       tvSeriesApi: "https://api.themoviedb.org/3/search/tv?query=",
       api_key: "&api_key=1d1fd003d3798bdc399e491c87adb22f",
-      //filtereds
+      //filtereds (dentro lo store vedi store.js)
       store,
     };
   },
@@ -36,7 +36,19 @@ export default {
       //con axios col get prendo la variabile e col response la risposta dell'url
       axios.get(movieUrl).then((response) => {
         //asseggno all'array filteredMovies dichiarato in data, il risultato
-        this.store.filteredMovies = response.data.results;
+        // mi avvalgo di usare .map per creare un nuovo "array" cono solo i contenuti che mi
+        //servono e posso anche aggiungerene, in caso di bisogno.
+        this.store.filteredMovies = response.data.results.map((movie) => {
+          const { title, original_title, original_language, vote_average } =
+            movie;
+          return {
+            title: title,
+            original_title,
+            language: original_language,
+            vote: vote_average,
+            //vote: Math.ceil(vote_average / 2),
+          };
+        });
         console.log(response.data.results);
       });
     },

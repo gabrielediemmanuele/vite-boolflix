@@ -1,6 +1,8 @@
 <script>
 //axios
 /* import axios from "axios"; */
+
+//Import dello store che contiene i due container (vedi store.js)
 import { store } from "../data/store";
 export default {
   data() {
@@ -61,8 +63,8 @@ export default {
       <li v-for="movies in store.filteredMovies" :key="id">
         <div>Titolo: {{ movies.title }}</div>
         <div>Titolo Originale: {{ movies.original_title }}</div>
-        <div>Lingua: {{ movies.original_language }}</div>
-        <div>Voto: {{ movies.vote_average }}</div>
+        <div>Lingua: {{ movies.language }}</div>
+        <div>Voto: {{ movies.vote }}</div>
       </li>
     </ul>
   </div>
