@@ -44,7 +44,21 @@ export default {
           />
         </div>
         <div>
-          <span v-for="star in movieCard.vote" :key="star"> ⭐ </span>
+          <span>Vote: </span>
+          <span v-for="star in movieCard.vote" :key="star">
+            <font-awesome-icon
+              icon="fa-solid fa-star"
+              size="sm"
+              style="color: #ffd500"
+            />
+          </span>
+          <span v-for="star in 5 - movieCard.vote" :key="star">
+            <font-awesome-icon
+              icon="fa-regular fa-star"
+              size="sm"
+              style="color: #ffd500"
+            />
+          </span>
         </div>
         <!-- <div>Voto: {{ movieCard.vote }}</div> -->
         <!-- <font-awesome-icon :icon="['fas', 'star']" size="lg" style="color: #ffea00;" /> -->
@@ -77,8 +91,21 @@ export default {
           />
         </div>
         <div>
-          <span v-for="star in tvSeriesCard.vote" :key="vote"> ⭐ </span>
-          <span v-for="star in tvSeriesCard.vote" :key="star"> ❌ </span>
+          <span>Vote: </span>
+          <span v-for="star in tvSeriesCard.vote" :key="star">
+            <font-awesome-icon
+              icon="fa-solid fa-star"
+              size="sm"
+              style="color: #ffd500"
+            />
+          </span>
+          <span v-for="star in 5 - tvSeriesCard.vote" :key="star">
+            <font-awesome-icon
+              icon="fa-regular fa-star"
+              size="sm"
+              style="color: #ffd500"
+            />
+          </span>
           <!-- &#9734; -->
         </div>
       </li>
