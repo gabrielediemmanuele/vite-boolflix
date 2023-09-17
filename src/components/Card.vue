@@ -4,6 +4,7 @@ export default {
     return {
       // creo un array con stringhe della lingua
       languages: ["it", "en", "es", "fr", "de"],
+      imgBaseUrl: "https://image.tmdb.org/t/p/w342",
     };
   },
   //props che riceve dal genitore (CardsContainer), le info dallo store
@@ -20,6 +21,10 @@ export default {
   <div v-if="movieCard" class="risultato">
     <ul>
       <li>
+        <img
+          :src="imgBaseUrl + movieCard.moviesPoster"
+          :alt="movieCard.title"
+        />
         <div>Titolo: {{ movieCard.title }}</div>
         <div>Titolo Originale: {{ movieCard.original_title }}</div>
         <!--! condizioni per generare le bandiere...  -->
@@ -45,6 +50,10 @@ export default {
   <div v-if="tvSeriesCard" class="risultato">
     <ul>
       <li>
+        <img
+          :src="imgBaseUrl + tvSeriesCard.tvSeriesPoster"
+          :alt="tvSeriesCard.name"
+        />
         <div>Titolo: {{ tvSeriesCard.name }}</div>
         <div>Titolo Originale: {{ tvSeriesCard.original_name }}</div>
         <!--! condizioni per generare le bandiere...  -->

@@ -39,14 +39,21 @@ export default {
         // mi avvalgo di usare .map per creare un nuovo "array" cono solo i contenuti che mi
         //servono e posso anche aggiungerene, in caso di bisogno.
         this.store.filteredMovies = response.data.results.map((movie) => {
-          const { id, title, original_title, original_language, vote_average } =
-            movie;
+          const {
+            id,
+            title,
+            original_title,
+            original_language,
+            vote_average,
+            poster_path,
+          } = movie;
           return {
             id,
             title: title,
             original_title,
             language: original_language,
             vote: vote_average,
+            moviesPoster: poster_path,
             //vote: Math.ceil(vote_average / 2),
           };
         });
@@ -61,14 +68,21 @@ export default {
       //con axios col get prendo la variabile e col response la risposta dell'url
       axios.get(tvSeries).then((response) => {
         this.store.filteredTvSeries = response.data.results.map((tvSerie) => {
-          const { id, name, original_name, original_language, vote_average } =
-            tvSerie;
+          const {
+            id,
+            name,
+            original_name,
+            original_language,
+            vote_average,
+            poster_path,
+          } = tvSerie;
           return {
             id,
             name: name,
             original_name,
             language: original_language,
             vote: vote_average,
+            tvSeriesPoster: poster_path,
             //vote: Math.ceil(vote_average / 2),
           };
         });
