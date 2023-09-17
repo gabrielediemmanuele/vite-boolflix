@@ -52,7 +52,7 @@ export default {
             title: title,
             original_title,
             language: original_language,
-            vote: vote_average,
+            vote: Math.ceil(vote_average / 2),
             moviesPoster: poster_path,
             //vote: Math.ceil(vote_average / 2),
           };
@@ -81,7 +81,7 @@ export default {
             name: name,
             original_name,
             language: original_language,
-            vote: vote_average,
+            vote: Math.ceil(vote_average / 2),
             tvSeriesPoster: poster_path,
             //vote: Math.ceil(vote_average / 2),
           };

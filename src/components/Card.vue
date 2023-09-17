@@ -43,7 +43,11 @@ export default {
             :alt="language"
           />
         </div>
-        <div>Voto: {{ movieCard.vote }}</div>
+        <div>
+          <span v-for="star in movieCard.vote" :key="star"> ⭐ </span>
+        </div>
+        <!-- <div>Voto: {{ movieCard.vote }}</div> -->
+        <!-- <font-awesome-icon :icon="['fas', 'star']" size="lg" style="color: #ffea00;" /> -->
       </li>
     </ul>
   </div>
@@ -72,7 +76,11 @@ export default {
             :alt="language"
           />
         </div>
-        <div>Voto: {{ tvSeriesCard.vote }}</div>
+        <div>
+          <span v-for="star in tvSeriesCard.vote" :key="vote"> ⭐ </span>
+          <span v-for="star in tvSeriesCard.vote" :key="star"> ❌ </span>
+          <!-- &#9734; -->
+        </div>
       </li>
     </ul>
   </div>
