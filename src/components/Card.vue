@@ -12,6 +12,19 @@ export default {
     movieCard: Object,
     tvSeriesCard: Object,
   },
+
+  //Computed (si usa senza valore) - per generare le copertine (anche quelle null).
+  computed: {
+    moviePoster() {
+      if (!this.movieCard.moviesPoster) return "../../public/img/125492.jpg";
+      return `${this.imgBaseUrl}${this.movieCard.moviesPoster}`;
+    },
+    tvSeriePoster() {
+      if (!this.tvSeriesCard.tvSeriesPoster)
+        return "../../public/img/125492.jpg";
+      return `${this.imgBaseUrl}${this.tvSeriesCard.tvSeriesPoster}`;
+    },
+  },
 };
 </script>
 
@@ -21,10 +34,7 @@ export default {
   <div v-if="movieCard" class="risultato">
     <ul>
       <li>
-        <img
-          :src="imgBaseUrl + movieCard.moviesPoster"
-          :alt="movieCard.title"
-        />
+        <img :src="moviePoster" :alt="movieCard.title" />
         <div>Titolo: {{ movieCard.title }}</div>
         <div>Titolo Originale: {{ movieCard.original_title }}</div>
         <!--! condizioni per generare le bandiere...  -->
@@ -68,10 +78,7 @@ export default {
   <div v-if="tvSeriesCard" class="risultato">
     <ul>
       <li>
-        <img
-          :src="imgBaseUrl + tvSeriesCard.tvSeriesPoster"
-          :alt="tvSeriesCard.name"
-        />
+        <img :src="tvSeriePoster" :alt="tvSeriesCard.name" />
         <div>Titolo: {{ tvSeriesCard.name }}</div>
         <div>Titolo Originale: {{ tvSeriesCard.original_name }}</div>
         <!--! condizioni per generare le bandiere...  -->
