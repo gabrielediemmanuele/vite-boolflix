@@ -13,8 +13,16 @@ export default {
 </script>
 
 <template>
-  <!--todo semplice collegamento con cards container  -->
-  <CardsContainer></CardsContainer>
+  <div class="main-container">
+    <!--todo semplice collegamento con cards container  -->
+    <CardsContainer></CardsContainer>
+  </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.main-container {
+  width: 100%;
+  background-color: rgb(28, 28, 28);
+  margin-top: 60px;
+}
+</style>
