@@ -30,7 +30,8 @@ export default {
 
 <template>
   <!--todo MOVIE  -->
-  <div v-if="movieCard" class="Product-card">
+
+  <div v-if="movieCard" class="product-card col-6 col-sm-4 col-md-3 col-lg-2">
     <!-- CARD IMAGE  -->
     <img class="cover" :src="moviePoster" :alt="movieCard.title" />
     <!-- CARD INFO  -->
@@ -38,7 +39,7 @@ export default {
       <div>Titolo: {{ movieCard.title }}</div>
       <div>Titolo Originale: {{ movieCard.original_title }}</div>
       <!-- Language -->
-      <div class="Language">
+      <div class="language">
         Lingua: {{ movieCard.language }}
         <img
           class="lang-flag"
@@ -75,13 +76,16 @@ export default {
   </div>
 
   <!--todo Tv Series -->
-  <div v-if="tvSeriesCard" class="Product-card">
+  <div
+    v-if="tvSeriesCard"
+    class="product-card col-6 col-sm-4 col-md-3 col-lg-2"
+  >
     <img class="cover" :src="tvSeriePoster" :alt="tvSeriesCard.name" />
     <div class="card-info">
       <div>Titolo: {{ tvSeriesCard.name }}</div>
       <div>Titolo Originale: {{ tvSeriesCard.original_name }}</div>
       <!-- Language -->
-      <div class="Language">
+      <div class="language">
         Lingua: {{ tvSeriesCard.language }}
         <img
           class="lang-flag"
@@ -119,10 +123,10 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-.Product-card {
-  width: 200px;
+.product-card {
   color: white;
   position: relative;
+  box-sizing: border-box;
   .cover {
     width: 100%;
     display: block;
@@ -133,15 +137,15 @@ export default {
     bottom: 0;
     left: 0;
     right: 0;
-    height: 100%;
     width: 100%;
     opacity: 0;
     transition: 0.5s ease;
     background-color: rgba(0, 0, 0, 0.8);
     padding: 15px;
+    font-size: 80%;
   }
 }
-.Product-card:hover .card-info {
+.product-card:hover .card-info {
   opacity: 1;
 }
 .lang-flag {
