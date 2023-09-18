@@ -2,7 +2,6 @@
 export default {
   data() {
     return {
-      //il query, rappresenta la parola filtrata nell'input.
       query: "",
     };
   },
@@ -18,12 +17,24 @@ export default {
     <div
       class="container d-flex justify-content-between align-items-center p-2"
     >
-      <!-- APP TITLE -->
-      <div class="text-danger h2">BOOLFLIX</div>
+      <!-- App logo  & nav menu -->
+      <div class="d-flex text-danger h1 m-0 p-0">
+        BOOLFLIX
+        <!-- nav list-->
+        <ul
+          class="d-flex justify-content-between align-items-center text-light mx-3"
+        >
+          <li>Home</li>
+          <li>Serie Tv</li>
+          <li>Film</li>
+          <li>Nuovi e Popolari</li>
+          <li>La mia Lista</li>
+          <li>Sfoglia per lingua</li>
+        </ul>
+      </div>
       <!-- INPUT CONTAINER TEXT AND BUTTON  -->
-      <div class="input-group d-flex">
-        <!--* qui richiamiamo con v-model ciò che verrà scritto.  -->
-        <!--* il keyup invece serve per ottenere il risultato anche premendo "enter" -->
+      <div class="input-group d-flex align-items-center">
+        <!--  Input -->
         <input
           type="text"
           class="form-control"
@@ -33,15 +44,10 @@ export default {
           v-model="query"
           v-on:keyup.enter="$emit('re-search', query)"
         />
-
-        <!--todo NOTA BENE: se fosse stato un Form, si poteva utilizzare 
-        @submit.prevent per evitare il reset della pagina all'invio delle
-        informazioni  -->
-
-        <!--  al bottone invece otteniamo il getMovie col click  -->
+        <!-- Button -->
         <button
           @click="$emit('re-search', query)"
-          class="btn btn-outline-secondary bg-danger text-light"
+          class="btn bg-danger text-light"
           type="button"
           id="button-addon2"
         >
@@ -54,11 +60,32 @@ export default {
 
 <style lang="scss" scoped>
 header {
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgb(28, 28, 28);
+  box-shadow: 1px 1px 6px 4px black;
 }
 .container {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    font-size: 12px;
+    li {
+      margin: 0 5px 0 5px;
+      font-weight: bold;
+    }
+    li:hover {
+      text-decoration: underline;
+      color: #dc3545;
+    }
+  }
   .input-group {
     width: 280px;
+    span {
+      margin-right: 15px;
+    }
+    #button-addon2:hover {
+      color: black !important;
+    }
   }
 }
 </style>

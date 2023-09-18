@@ -12,7 +12,10 @@ import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
 import { faStar as faStarSolid } from "@fortawesome/free-solid-svg-icons";
 import { faStar as faStarRegular } from "@fortawesome/free-regular-svg-icons";
-library.add(faStarSolid, faStarRegular);
+import { faMagnifyingGlass as faGlassSolid } from "@fortawesome/free-solid-svg-icons";
+import { faBell as faBellRegular } from "@fortawesome/free-regular-svg-icons";
+
+library.add(faStarSolid, faStarRegular, faGlassSolid, faBellRegular);
 
 const app = createApp(App);
 app.component("font-awesome-icon", FontAwesomeIcon);
