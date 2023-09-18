@@ -15,7 +15,7 @@ export default {
   <header>
     <!-- bootstrap container  -->
     <div
-      class="container d-flex justify-content-between align-items-center p-2"
+      class="container d-flex justify-content-between align-items-center flex-nowrap p-2"
     >
       <!-- App logo  & nav menu -->
       <div class="d-flex text-danger h1 m-0 p-0">
@@ -66,6 +66,7 @@ header {
   top: 0;
   right: 0;
   left: 0;
+  z-index: 3;
 }
 .container {
   ul {
@@ -78,7 +79,7 @@ header {
       font-weight: bold;
     }
     li:hover {
-      text-decoration: underline;
+      font-weight: bolder;
       color: #dc3545;
     }
   }
