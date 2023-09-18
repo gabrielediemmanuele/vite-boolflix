@@ -62,6 +62,10 @@ export default {
 header {
   background-color: rgb(28, 28, 28);
   box-shadow: 1px 1px 6px 4px black;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
 }
 .container {
   ul {
